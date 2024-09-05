@@ -1,0 +1,171 @@
+.cart-container {
+    padding: 2rem;
+    background-color: #3d2009;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+}
+
+
+.TextCart-container h1 {
+    display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: center;
+        min-height: 200px;
+        color: #77674b;
+        padding-top: 10%;
+        font-size: 3rem;
+        text-align: center;
+        margin-top: 57%;
+        font-family: 'Arial', sans-serif;
+}
+
+
+.cart-text {
+    font-size: 2rem;
+    color: #fbe59c;
+}
+
+.cart-table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    
+}
+
+.cart-table thead {
+    background-color: #fbe59c;
+    color: #3d2009;
+    text-align: center;
+}
+
+.cart-table th {
+    padding: 1rem;
+    text-align: center;
+}
+
+.cart-table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-table td {
+    padding: 1rem;
+    text-align: center;
+}
+
+.btnAdd{
+    /* background: transparent; */
+    border: none;
+    cursor: pointer;
+    color: green;
+    font-size: 1rem;
+    transition: color 0.3s;
+    font-weight: 900;
+    margin-left: 7%;
+}
+
+.btnRemove{
+    /* background: transparent; */
+        border: none;
+        cursor: pointer;
+        color: #e63946;
+        font-size: 1rem;
+        transition: color 0.3s;
+        font-weight: 900;
+        margin-right: 10%;
+}
+
+.btnDelet {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #e63946;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.btnDelet:hover {
+    color: #d62839;
+}
+
+@media (max-width: 768px) {
+    .cart-table {
+        font-size: 0.9rem;
+    }
+
+    .cart-text {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-table {
+        font-size: 0.5rem;
+    }
+
+    .cart-text {
+        font-size: 1.2rem;
+    }
+
+    .btnDelet {
+        font-size: 1.2rem;
+    }
+}  
+
+.total-container {
+    margin-top: 20px;
+    color: #3d2009;
+}
+
+.total-card {
+    background-color: #e7d8a7;;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.total-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.ligne{
+    color: #3d2009;
+}
+.books-detail {
+    display: flex;
+    justify-content:center;
+    margin-bottom: 20px;
+}
+
+.books-detail h2 {
+    font-size: 18px;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-order {
+    background-color: #3d2009;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-order:hover {
+    background-color: #0056b3;
+}
