@@ -3,17 +3,18 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #3d2009;
-    color: #f3e3b5;
+    background-color: #e8dfc9;
+    /* color: #3e3108; */
     box-shadow: 0 4px 6px rgba(159, 133, 92, 0.1);
     position: relative;
+    font-weight: 600;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .logname {
     display: flex;
-    /* align-items: center; */
     text-decoration: none;
-    color: #f3e3b5;
+    color: #efdeab;
 }
 
 .logname img {
@@ -27,26 +28,27 @@
     font-weight: bold;
     margin: 0;
     text-decoration: none;
-    color: #f3e3b5;
-        align-items: center;
+    color: #3e4634;
+    align-items: center;
 }
 
 .nav-links {
     display:flex;
     gap: 35px;
+    align-items: center;
 }
 
 .nav-titles {
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
     transition: color 0.3s ease;
     text-decoration: none;
-    color: #f3e3b5;
+    color: #3e4634;
     padding-top: 2%;
 }
 
 .nav-titles:hover {
-    color: rgb(92, 83, 50);
+    color: #676f5c;
 }
 
 .btns {
@@ -66,32 +68,34 @@
 }
 
 .btn-signin {
-    background-color: transparent;
-    color: rgb(243, 227, 181);
+    background-color: #656c5d;
+    color: #f3e3b5;
     border: 1px solid #eedf93;
 }
 
 .btn-signin:hover {
-    background-color: #7e5b32;
-    color: rgb(243, 227, 181);
+    background-color: #29311f;
+    color: #f3e3b5;
+    opacity: 0.8;
 }
 
 .btn-signup {
-    background-color: #ffffff;
-    color: #282c34;
+    background-color: #5e6b4d;
+    color: #f3e3b5;
     border: 1px solid #eedf93;
 }
 
 .btn-signup:hover {
-    background-color: #7e5b32;
+    background-color: #29311f;
     color: #ffffff;
+    opacity: 0.8;
 }
 
 .menu-toggle {
     display: none;
     background: none;
     border: none;
-    color: #f3e3b5;
+    color: #676f5c;
     font-size: 24px;
     cursor: pointer;
 }
@@ -102,20 +106,36 @@
         flex-direction: column;
         gap: 10px;
         position: absolute;
-        top: 60px;
-        right:0cap;
-        background-color: #3d2009;
+        top: 50px;
+        right:0;
+        background-color: #e8dfc9;
         width: 100%;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
+        padding: 3px;
     }
 
     .nav-links.active {
         max-height: 500px;
+        padding-top: 8%;
+    }
+
+    .nav-titles{
+        font-size: 17px;
+        padding-top: 0;
     }
 
     .menu-toggle {
         display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        top: 50px;
+    }
+    .nav-titles {
+        font-size: 16px;
     }
 }

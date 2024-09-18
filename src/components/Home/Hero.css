@@ -1,11 +1,11 @@
 .hero-container {
-    margin-top:1cap;
+    margin-top: 0cap;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: rgb(61, 32, 9);
+    color: #333a28;
     background-color: #3d2009;
     height: 70vh;
     background: url('../logos/bookstore.jpg') no-repeat center center/cover;
@@ -13,16 +13,16 @@
 }
 
 .div-container {
-    background: #d7c7a3cc;
-    padding: 20px;
+    background: #c9c0aacc;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 9px rgba(224, 217, 208, 0.5);
-    margin-bottom: 80px;
-    max-width: 50%;
+    /* margin-bottom: 80px; */
+    max-width: 70%;
 }
 
 .caption {
-    font-size: 3rem;
+    font-size: 1.7rem;
     font-weight: bold;
     margin: 0;
 }
@@ -31,6 +31,7 @@
     font-size: 1.2rem;
     max-width: 600px;
     margin: 20px auto;
+    color: #303b21;
 }
 
 .btn {
@@ -38,7 +39,7 @@
 }
 
 .btn-container {
-    background-color: #3d2009;
+    background-color: #555c4d;
     border: none;
     border-radius: 5px;
     color: #ffffff;
@@ -50,22 +51,33 @@
 }
 
 .btn-container:hover {
-    background-color: rgb(153, 134, 63); 
+    background-color: #333a28; 
 }
 
 @media (max-width: 768px) {
     .div-container {
-        max-width: 90%;
-        /* Adjust for smaller screens */
+        max-width: 75%;
     }
 
     .caption {
-        font-size: 2rem;
-        /* Smaller font size for smaller screens */
+        font-size: 1.3rem;
     }
 
     .par-container {
         font-size: 1rem;
-        /* Smaller font size for smaller screens */
+    }
+}
+
+@media (max-width: 360x) {
+    .div-container {
+        max-width: 90%;
+    }
+
+    .caption {
+        font-size: 2rem;
+    }
+
+    .par-container {
+        font-size: 1rem;
     }
 }

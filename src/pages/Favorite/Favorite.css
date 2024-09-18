@@ -1,11 +1,15 @@
-/* Overall container styling */
 .fav-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 70px;
-    background: #3d2009;
+    background: #e8dfc9;
     min-height: 100vh;
+}
+.loading {
+    color: #676f5c;
+    padding-top: 20%;
+    text-align: center;
 }
 
 .favBook {
@@ -18,22 +22,22 @@
 
 .book-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     width: 100%;
     max-width: 1200px;
 }
 
 .book-contain {
+    background-color: transparent;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* overflow: hidden; */
+    /* min-width: 112%; */
 }
 
 .book-contain:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px #353a2d;
 }
 
 .NoFav_container {
@@ -42,7 +46,7 @@
     align-items: center;
     justify-content: center;
     min-height: 200px;
-    color: #77674b;
+    color: #676f5c;
     padding-top: 10%;
 
     font-size: 3rem;
@@ -58,24 +62,20 @@
     margin-bottom: 10px;
 }
 
-/* Responsive design */
 @media (max-width: 1500px) {
     .book-grid {
         grid-template-columns: repeat(4, 1fr);
-        /* 4 columns on medium screens */
     }
 }
 
 @media (max-width: 950px) {
     .book-grid {
         grid-template-columns: repeat(2, 1fr);
-        /* 2 columns on small screens */
     }
 }
 
 @media (max-width: 780px) {
     .book-grid {
         grid-template-columns: 1fr;
-        /* 1 column on very small screens */
     }
 }

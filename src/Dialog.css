@@ -1,0 +1,48 @@
+.all-dialog{
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f9e8d3;
+}
+
+.dialog-container{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: "translate(-50%, -50%)";
+    background-color: #dbbe97;
+    padding: 50%;
+}
+
+.dialog-container h3{
+    color: #52340e;
+}
+
+.accept-message{
+    display:flex;
+    align-items: center;
+    color: #544421;
+    border: none;
+}
+
+.yes-btn{
+    background-color: green;
+    color: #dbbe97;
+    padding: 10px;
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+.no-btn{
+    background-color: red;
+    color: #dbbe97;
+    padding: 10px;
+    margin-right: 4px;
+    cursor: pointer;
+}

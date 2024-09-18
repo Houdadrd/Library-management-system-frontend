@@ -123,7 +123,7 @@ const Cart = () => {
     }
   };
 
-  const LoadingComponent = () => <p style={{ color: "white" }}>Loading ...</p>;
+  const LoadingComponent = () => <p className="loading">Loading ...</p>;
 
   const CartComponent = () => (
     <>
@@ -134,59 +134,64 @@ const Cart = () => {
       ) : (
         <>
           <h1 className="cart-text">Your Cart</h1>
-          <table className="cart-table">
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Total</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {cart.books.map((item) => (
-                <tr key={item._id}>
-                  <td>{item.bookId.title}</td>
-                  <td>{item.bookId.author}</td>
-                  <td>{item.bookId.price} DH</td>
-                  <td>
-                    <button
-                      onClick={() =>
-                        updateQuantity(item.bookId._id, item.quantity - 1)
-                      }
-                      disabled={item.quantity <= 1}
-                      className="btnRemove"
-                    >
-                      <IoIosRemove />
-                    </button>
-                    {item.quantity}
-                    <button
-                      onClick={() =>
-                        updateQuantity(item.bookId._id, item.quantity + 1)
-                      }
-                      className="btnAdd"
-                    >
-                      <MdOutlineAdd />
-                    </button>
-                  </td>
-                  <td>{item.bookId.price * item.quantity} DH</td>
-                  <td>
-                    <button
-                      className="btnDelet"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        deleteItem(item.bookId._id);
-                      }}
-                    >
-                      <AiFillDelete />
-                    </button>
-                  </td>
+          <div className="table-container">
+            <table className="cart-table">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                  <th>Action</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {cart.books.map((item) => (
+                  <tr key={item._id}>
+                    <td>{item.bookId.title}</td>
+                    <td>{item.bookId.author}</td>
+                    <td>{item.bookId.price} DH</td>
+                    <td>
+                      <div className="quantity-controls">
+                        <button
+                          onClick={() =>
+                            updateQuantity(item.bookId._id, item.quantity - 1)
+                          }
+                          disabled={item.quantity <= 1}
+                          className="btnRemove"
+                        >
+                          <IoIosRemove />
+                        </button>
+                        <span>{item.quantity}</span>
+                        <button
+                          onClick={() =>
+                            updateQuantity(item.bookId._id, item.quantity + 1)
+                          }
+                          className="btnAdd"
+                        >
+                          <MdOutlineAdd />
+                        </button>
+                      </div>
+                    </td>
+                    <td>{item.bookId.price * item.quantity} DH</td>
+                    <td>
+                      <button
+                        className="btnDelet"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          deleteItem(item.bookId._id);
+                        }}
+                      >
+                        <AiFillDelete />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
           {cart && (
             <div className="total-container">
               <div className="total-card">

@@ -6,6 +6,8 @@ import "./AllBook.css";
 const AllBook = () => {
   const [data, setData] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
+    const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -15,9 +17,11 @@ const AllBook = () => {
             ? `http://localhost:5000/api/FilterByCategory/${selectedCategory}`
             : "http://localhost:5000/api/AllBooks"
         );
-       setData(response.data.data);
+        setData(response.data.data);
       } catch (error) {
         console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
       }
     };
     fetchBooks();
@@ -34,6 +38,7 @@ const AllBook = () => {
     "Historical",
     "Political",
   ];
+   if (loading) return <p className="loading">Loading...</p>;
 
   return (
     <div className="allBooks-container">

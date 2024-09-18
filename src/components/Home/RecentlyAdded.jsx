@@ -5,18 +5,25 @@ import './RecentlyAdded.css';
 
 const RecentlyAdded = () => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetch = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/RecentBooks");
-        setData(response.data.data); 
+        const response = await axios.get(
+          "http://localhost:5000/api/RecentBooks"
+        );
+        setData(response.data.data);
       } catch (error) {
         console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
       }
     };
     fetch();
   }, []);
+
+  if(loading) return <p className='loading'>Loading recent books...</p>
 
   return (
     <div className='recent-container'>

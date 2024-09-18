@@ -4,15 +4,15 @@ import './Favorite.css';
 import BookCard from "../../components/BookCard/BookCard";
 import { CiStar } from "react-icons/ci";
 
+
 const Favorite = () => {
-    const [favoriteBooks, setFavoriteBooks] = useState([]); 
-      const [loading, setLoading] = useState(true);
+  const [favoriteBooks, setFavoriteBooks] = useState([]); 
+  const [loading, setLoading] = useState(true);
 
-
-    const headers = {
-        id: localStorage.getItem("id"),
-        authorization: `Bearer ${localStorage.getItem("authToken")}`,
-    };
+  const headers = {
+    userid: localStorage.getItem("userId"),
+    authorization: `Bearer ${localStorage.getItem("authToken")}`,
+  };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -21,7 +21,6 @@ const Favorite = () => {
                 "http://localhost:5000/api/FavoritesBooks",
                 { headers }
               );
-            //   console.log(response.data);
               setFavoriteBooks(response.data.data);
             } catch (error) {
               console.error("Error fetching data:", error);
@@ -33,13 +32,13 @@ const Favorite = () => {
     }, []); 
 
     const LoadingComponent = () => {
-      return <p style={{ color: "white" }}>Loading ...</p>;
+      return <p className="loading">Loading ...</p>;
     };
 
     const FavoriteComponent = () => {
         return (  
              <>
-                {favoriteBooks?.books?.length == 0 ? (
+                {favoriteBooks.length == 0 ? (
                     <div className='NoFav_container'>
                         Favorite liste empty
                         <CiStar className='star' />
